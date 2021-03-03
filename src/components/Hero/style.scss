@@ -1,6 +1,12 @@
+$black: #121212;
+$orange: #db901e;
+$yellow: #FBCD08;
+
 .section-hero {
   height: 100vh;
   padding: 15px;
+  perspective: 4000px;
+  overflow: hidden;
 
   .container {
     height: 100%;
@@ -8,20 +14,57 @@
 
   .hero-wrapper {
     height: 100%;
-    background-color: #FBCD08;
+    background-color: rgba($yellow, .75);
     padding-top: 100px;
     padding-bottom: 100px;
     border-radius: 1rem;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 20px rgba($black, .5);
   }  
   .hero-inner {
     display: flex;
+    position: relative;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
     height: 100%;
+    color: $black
   }
   .title {
-    font-size: 4rem;
-    text-align: center;
+    position: relative;
+    margin-top: .25em;
+    margin-bottom: .25em;
+    font-size: 5rem;    
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    transition: all 0.75s ease-out;
+    z-index: 10;    
+  }
+  .subtitle {
+    position: relative;
+    margin-top: .25em;
+    margin-bottom: .25em;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: all 0.75s ease-out;
+    z-index: 10;
+  }
+  .circle {
+    position: absolute;
+    right: 0;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    background-color: $orange;
+    background-image: linear-gradient(
+      45deg,
+      rgba(201, 25, 77, 0.75),
+      rgba($orange, .75)
+    );
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.4);
+    transition: all 0.75s ease-out;
+    z-index: -1;
   }
 }
